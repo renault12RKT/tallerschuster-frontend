@@ -1,0 +1,136 @@
+/* pages/Home.css */
+.home {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.home__bg {
+  position: fixed;
+  inset: 0;
+  background: 
+    radial-gradient(ellipse at 20% 80%, rgba(245,166,35,0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(245,166,35,0.05) 0%, transparent 50%),
+    var(--bg);
+  z-index: 0;
+}
+
+.home__content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+
+.home__header {
+  text-align: center;
+}
+
+.home__logo-img {
+  width: 100%;
+  max-width: 340px;
+  border-radius: 10px;
+  margin: 0 auto;
+  display: block;
+}
+
+.home__sub {
+  margin-top: 12px;
+  color: var(--text2);
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+}
+
+.home__info {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+}
+
+.home__horario {
+  display: flex;
+  gap: 20px;
+}
+
+.home__horario-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+}
+
+.home__horario-emoji {
+  font-size: 1.5rem;
+}
+
+.home__horario-item strong {
+  display: block;
+  font-family: var(--font-head);
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  color: var(--text2);
+  text-transform: uppercase;
+}
+
+.home__horario-item span {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--accent);
+}
+
+.home__servicios {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.home__servicio {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-size: 1.3rem;
+}
+
+.home__servicio > span { font-size: 1.6rem; }
+
+.home__servicio strong {
+  display: block;
+  font-family: var(--font-head);
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+.home__servicio p {
+  font-size: 0.85rem;
+  color: var(--text2);
+  margin-top: 2px;
+}
+
+.home__cta {
+  font-size: 1.3rem;
+  padding: 18px;
+  letter-spacing: 1px;
+}
+
+.home__admin-link {
+  background: none;
+  border: none;
+  color: var(--text3);
+  font-size: 0.8rem;
+  cursor: pointer;
+  text-align: center;
+  padding: 8px;
+  transition: color 0.2s;
+}
+
+.home__admin-link:hover { color: var(--text2); }

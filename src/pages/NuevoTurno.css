@@ -1,0 +1,238 @@
+/* pages/NuevoTurno.css */
+.nuevo-turno {
+  min-height: 100vh;
+  background: var(--bg);
+  padding: 20px 0 60px;
+}
+
+.nt__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 36px;
+}
+
+.nt__back {
+  background: none;
+  border: none;
+  color: var(--accent);
+  font-family: var(--font-head);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  letter-spacing: 0.3px;
+}
+
+.nt__steps {
+  display: flex;
+  gap: 6px;
+}
+
+.nt__step {
+  width: 28px;
+  height: 4px;
+  background: var(--border);
+  border-radius: 2px;
+  transition: background 0.3s;
+}
+.nt__step--done, .nt__step--active { background: var(--accent); }
+
+.nt__section {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.nt__title {
+  font-family: var(--font-head);
+  font-size: clamp(2.2rem, 9vw, 3rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.5px;
+}
+
+.nt__subtitle { color: var(--text2); font-size: 0.95rem; }
+
+.nt__opciones { display: flex; flex-direction: column; gap: 12px; }
+
+.nt__opcion {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px;
+  background: var(--bg2);
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s;
+  color: var(--text);
+  font-family: var(--font-body);
+}
+.nt__opcion:hover { border-color: var(--accent); }
+.nt__opcion--sel { border-color: var(--accent); background: rgba(245,166,35,0.08); }
+
+.nt__opcion-icon { font-size: 2rem; }
+
+.nt__opcion strong {
+  display: block;
+  font-family: var(--font-head);
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+.nt__opcion p { font-size: 0.85rem; color: var(--text2); margin-top: 3px; }
+
+.nt__form { display: flex; flex-direction: column; gap: 18px; }
+
+.nt__row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+.nt__horarios { display: flex; flex-direction: column; gap: 12px; }
+.nt__horarios-label { font-size: 0.78rem; color: var(--text2); text-transform: uppercase; letter-spacing: 0.8px; font-weight: 500; }
+.nt__horarios-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+
+.nt__hora-btn {
+  padding: 14px 8px;
+  background: var(--bg2);
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  font-family: var(--font-head);
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s;
+  letter-spacing: 0.3px;
+}
+.nt__hora-btn:hover { border-color: var(--accent); }
+.nt__hora-btn--sel { background: var(--accent); border-color: var(--accent); color: #000; }
+
+.nt__resumen { display: flex; flex-direction: column; gap: 14px; }
+
+.nt__resumen-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.9rem;
+}
+.nt__resumen-row span { color: var(--text2); flex-shrink: 0; }
+.nt__resumen-row strong { text-align: right; }
+
+.nt__terminos {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+}
+
+.nt__checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.nt__checkbox input { display: none; }
+
+.nt__checkmark {
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  border: 2px solid var(--border);
+  border-radius: 5px;
+  background: var(--bg3);
+  transition: all 0.15s;
+  position: relative;
+  margin-top: 1px;
+}
+
+.nt__checkbox input:checked + .nt__checkmark {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.nt__checkbox input:checked + .nt__checkmark::after {
+  content: '✓';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #000;
+  font-size: 0.75rem;
+  font-weight: 900;
+}
+
+.nt__terminos-text { font-size: 0.8rem; color: var(--text2); line-height: 1.6; }
+
+.nt__aclaracion {
+  background: rgba(245,166,35,0.1);
+  border: 1px solid rgba(245,166,35,0.3);
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 0.95rem;
+  color: var(--text2);
+  line-height: 1.5;
+}
+
+.nt__servicios-lista { display: flex; flex-direction: column; gap: 12px; }
+
+.nt__service-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 18px;
+  background: var(--bg2);
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s;
+  color: var(--text);
+  font-family: var(--font-body);
+  width: 100%;
+}
+.nt__service-card:hover { border-color: var(--accent); }
+.nt__service-card--sel { border-color: var(--accent); background: rgba(245,166,35,0.08); }
+
+.nt__service-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+.nt__service-header strong {
+  display: block;
+  font-family: var(--font-head);
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+.nt__service-km {
+  display: block;
+  font-size: 0.82rem;
+  color: var(--text2);
+  margin-top: 3px;
+}
+.nt__service-precio {
+  font-family: var(--font-head);
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--accent);
+  white-space: nowrap;
+}
+
+.nt__service-items {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.nt__service-items li {
+  font-size: 0.88rem;
+  color: var(--text2);
+  line-height: 1.4;
+}
+
+.nt__resumen-row span { font-size: 1rem; }
+.nt__resumen-row strong { font-size: 1rem; }

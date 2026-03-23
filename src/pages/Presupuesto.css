@@ -1,0 +1,151 @@
+/* pages/Presupuesto.css */
+.pres-pub {
+  min-height: 100vh;
+  background: var(--bg);
+  padding: 40px 0;
+}
+
+.pres-pub .container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.pres-pub__header {
+  text-align: center;
+  padding-bottom: 8px;
+}
+
+.pres-pub__logo {
+  font-size: 2.5rem;
+  margin-bottom: 12px;
+}
+
+.pres-pub__title {
+  font-family: var(--font-head);
+  font-size: 2.5rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.pres-pub__sub {
+  color: var(--text2);
+  margin-top: 6px;
+  font-size: 0.9rem;
+}
+
+.pres-pub__cliente {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.pres-pub__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  font-size: 0.9rem;
+  border-bottom: 1px solid var(--border);
+}
+.pres-pub__row:last-child { border-bottom: none; }
+.pres-pub__row span { color: var(--text2); }
+.pres-pub__row strong { text-align: right; }
+
+.pres-pub__detalle-title {
+  font-family: var(--font-head);
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--text2);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.pres-pub__descripcion {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--text);
+}
+
+.pres-pub__materiales {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+  font-size: 0.85rem;
+  color: var(--text2);
+}
+
+.pres-pub__materiales span {
+  display: block;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+.pres-pub__materiales p { color: var(--text); }
+
+.pres-pub__precio {
+  text-align: center;
+  padding: 28px 20px;
+}
+
+.pres-pub__precio-label {
+  font-size: 0.78rem;
+  color: var(--text2);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+}
+
+.pres-pub__precio-num {
+  font-family: var(--font-head);
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: var(--accent);
+  line-height: 1;
+}
+
+.pres-pub__tiempo {
+  font-size: 0.85rem;
+  color: var(--text2);
+  margin-top: 10px;
+}
+
+.pres-pub__acciones {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.pres-pub__aviso {
+  font-size: 0.82rem;
+  color: var(--text2);
+  line-height: 1.6;
+  padding: 14px;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.pres-pub__resultado {
+  padding: 22px;
+  border-radius: var(--radius);
+  font-weight: 600;
+  text-align: center;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.pres-pub__resultado--ok {
+  background: rgba(76,175,138,0.1);
+  color: var(--success);
+  border: 1px solid var(--success);
+}
+
+.pres-pub__resultado--no {
+  background: rgba(224,82,82,0.1);
+  color: var(--danger);
+  border: 1px solid var(--danger);
+}

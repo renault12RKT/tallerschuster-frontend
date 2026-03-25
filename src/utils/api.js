@@ -1,5 +1,5 @@
 // utils/api.js
-const BASE = import.meta.env.VITE_API_URL;
+const BASE = 'https://tallerschuster.onrender.com/api';
 
 async function request(path, options = {}) {
   const res = await fetch(`${BASE}${path}`, {

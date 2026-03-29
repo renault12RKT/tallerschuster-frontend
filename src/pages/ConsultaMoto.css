@@ -1,0 +1,17 @@
+.consulta { min-height: 100vh; background: var(--bg); padding: 20px 0 60px; }
+.consulta__title { font-family: var(--font-head); font-size: 2rem; font-weight: 800; margin: 20px 0 6px; }
+.consulta__sub { color: var(--text2); font-size: 0.95rem; margin-bottom: 24px; }
+.consulta__form { display: flex; gap: 10px; margin-bottom: 20px; }
+.consulta__form input { flex: 1; background: var(--bg3); border: 1px solid var(--border); border-radius: 8px; color: var(--text); font-size: 1rem; padding: 12px 14px; outline: none; }
+.consulta__form input:focus { border-color: var(--accent); }
+.consulta__resultado { border-radius: var(--radius); padding: 28px 20px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.consulta__resultado--success { background: rgba(76,175,138,0.1); border: 1px solid var(--success); }
+.consulta__resultado--warning { background: rgba(245,166,35,0.1); border: 1px solid var(--warning); }
+.consulta__resultado--info { background: rgba(100,160,255,0.1); border: 1px solid #64a0ff; }
+.consulta__resultado--danger { background: rgba(224,82,82,0.1); border: 1px solid var(--danger); }
+.consulta__resultado--neutral { background: var(--bg2); border: 1px solid var(--border); }
+.consulta__emoji { font-size: 3rem; }
+.consulta__moto { font-size: 1rem; color: var(--text2); }
+.consulta__estado { font-size: 1.15rem; font-weight: 600; color: var(--text); }
+.consulta__fecha { font-size: 0.8rem; color: var(--text2); }
+.consulta__wa-btn { margin-top: 8px; text-decoration: none; display: inline-flex; }

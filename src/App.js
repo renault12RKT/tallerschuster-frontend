@@ -5,6 +5,7 @@ import NuevoTurno from './pages/NuevoTurno';
 import Confirmacion from './pages/Confirmacion';
 import Admin from './pages/Admin';
 import Presupuesto from './pages/Presupuesto';
+import ConsultaMoto from './pages/ConsultaMoto';
 
 export default function App() {
   const [pagina, setPagina] = useState(() => {
@@ -27,8 +28,9 @@ export default function App() {
   };
 
   if (pagina === 'admin') return <Admin />;
+  if (pagina === 'consulta') return <ConsultaMoto onVolver={() => navegar('home')} />;
   if (pagina === 'presupuesto') return <Presupuesto token={presupuestoToken} />;
   if (pagina === 'turno') return <NuevoTurno onConfirmado={(t) => navegar('confirmacion', t)} onVolver={() => navegar('home')} />;
   if (pagina === 'confirmacion') return <Confirmacion turno={turnoConfirmado} onVolver={() => navegar('home')} />;
-  return <Home onSolicitarTurno={() => navegar('turno')} onAdmin={() => navegar('admin')} />;
+  return <Home onSolicitarTurno={() => navegar('turno')} onAdmin={() => navegar('admin')} onConsulta={() => navegar('consulta')} />;
 }

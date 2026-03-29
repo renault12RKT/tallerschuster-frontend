@@ -1,5 +1,5 @@
 // utils/api.js
-const BASE = 'https://tallerschuster.onrender.com/api';
+const BASE = '/api';
 
 async function request(path, options = {}) {
   const res = await fetch(`${BASE}${path}`, {
@@ -21,19 +21,30 @@ export const api = {
 
   // Admin
   getDashboard: () => request('/admin/dashboard'),
-  getTurnos: (fecha) => request(`/admin/turnos${fecha ? `?fecha=${fecha}` : ''}`),
+  getTurnos: (fecha, busqueda) => {
+    const params = new URLSearchParams();
+    if (fecha) params.set('fecha', fecha);
+    if (busqueda) params.set('busqueda', busqueda);
+    const qs = params.toString();
+    return request(`/admin/turnos${qs ? '?' + qs : ''}`);
+  },
   updateTurno: (id, data) => request(`/admin/turnos/${id}`, { method: 'PATCH', body: data }),
   deleteTurno: (id) => request(`/admin/turnos/${id}`, { method: 'DELETE' }),
   getDiagnosticos: () => request('/admin/diagnosticos'),
   updateDiagnostico: (id, data) => request(`/admin/diagnosticos/${id}`, { method: 'PATCH', body: data }),
   crearPresupuesto: (body) => request('/admin/presupuestos', { method: 'POST', body }),
   getPresupuestos: () => request('/admin/presupuestos'),
-  responderPresupuesto: (id, decision) => request(`/admin/presupuestos/${id}/responder`, { method: 'PATCH', body: { decision } }),
+  responderPresupuestoAdmin: (id, decision) => request(`/admin/presupuestos/${id}/responder`, { method: 'PATCH', body: { decision } }),
   getReparaciones: () => request('/admin/reparaciones'),
   updateReparacion: (id, data) => request(`/admin/reparaciones/${id}`, { method: 'PATCH', body: data }),
   getServiciosActivos: () => request('/admin/services-activos'),
   getHistorial: (patente) => request(`/admin/historial/${patente}`),
+  getEstadoMoto: (patente) => request(`/motos/estado?patente=${patente}`),
+  notificarTurno: (id, mensaje_custom) => request(`/admin/turnos/${id}/notificar`, { method: 'POST', body: { mensaje_custom } }),
+  // URL para descarga directa (no usa request(), devuelve URL)
+  getUrlExportarHistorial: (patente) => `${BASE}/admin/historial/exportar/${patente}`,
   getTurnosCount: () => request('/admin/turnos-count'),
   getPreciosService: () => request('/precios-service'),
-  updatePrecioService: (tipo, precio) => request(`/admin/precios-service/${tipo}`, { method: 'PATCH', body: { precio } }),
+  // firma correcta: (cilindrada, mantenimiento, data)
+  updatePrecioService: (cilindrada, mantenimiento, data) => request(`/admin/precios-service/${cilindrada}/${mantenimiento}`, { method: 'PATCH', body: data }),
 };

@@ -2,7 +2,7 @@
 import React from 'react';
 import './Home.css';
 
-export default function Home({ onSolicitarTurno, onAdmin }) {
+export default function Home({ onSolicitarTurno, onAdmin, onConsulta }) {
   return (
     <div className="home">
       <div className="home__bg" />
@@ -50,6 +50,11 @@ export default function Home({ onSolicitarTurno, onAdmin }) {
 
         <button className="btn btn--primary btn--full home__cta" onClick={onSolicitarTurno}>
           SOLICITAR TURNO
+        </button>
+
+        <button className="btn btn--secondary btn--full" onClick={onConsulta}
+          style={{fontSize:'1rem'}}>
+          🔍 Consultar estado de mi moto
         </button>
 
         <button className="home__admin-link" onClick={onAdmin}>

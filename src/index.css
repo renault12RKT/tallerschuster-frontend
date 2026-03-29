@@ -118,6 +118,7 @@ body {
 .badge--entregado { background: rgba(255,255,255,0.08); color: var(--text2); }
 .badge--cancelado { background: rgba(224,82,82,0.15); color: var(--danger); }
 .badge--completado { background: rgba(255,255,255,0.08); color: var(--text2); }
+.badge--no_presentado { background: rgba(224,82,82,0.12); color: var(--danger); }
 
 /* Spinner */
 .spinner {

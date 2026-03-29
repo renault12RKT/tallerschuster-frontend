@@ -7,7 +7,7 @@ const TERMINOS = 'El cliente autoriza el ingreso del vehículo al taller para su
 
 const CILINDRADAS = [
   { id: 'baja',  label: 'Baja cilindrada',  sub: 'Hasta 250cc' },
-  { id: 'media', label: 'Media cilindrada', sub: '251cc – 600cc' },
+  { id: 'media', label: 'Media cilindrada', sub: '250cc – 600cc' },
   { id: 'alta',  label: 'Alta cilindrada',  sub: 'Más de 600cc' },
 ];
 
@@ -159,12 +159,12 @@ export default function NuevoTurno({ onConfirmado, onVolver }) {
               <button className={`nt__opcion ${tipo === 'diagnostico' ? 'nt__opcion--sel' : ''}`}
                 onClick={() => setTipo('diagnostico')}>
                 <span className="nt__opcion-icon">🔍</span>
-                <div><strong>Diagnóstico</strong><p>Detectamos el problema · 1 hora</p></div>
+                <div><strong>Diagnóstico</strong><p>Detectamos el problema · 1 hora (aprox)</p></div>
               </button>
               <button className={`nt__opcion ${tipo === 'service' ? 'nt__opcion--sel' : ''}`}
                 onClick={() => setTipo('service')}>
                 <span className="nt__opcion-icon">⚙️</span>
-                <div><strong>Servicio</strong><p>Mantenimiento del vehículo · 2 horas</p></div>
+                <div><strong>Servicio</strong><p>Mantenimiento del vehículo · 2 horas (aprox)</p></div>
               </button>
             </div>
             <button className="btn btn--primary btn--full" disabled={!tipo} onClick={siguiente}>Continuar →</button>

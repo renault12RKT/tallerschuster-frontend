@@ -1,5 +1,5 @@
 // utils/api.js
-const BASE = '/api';
+const BASE = 'https://tallerschuster-production.up.railway.app/api';
 
 async function request(path, options = {}) {
   const res = await fetch(`${BASE}${path}`, {
